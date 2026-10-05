@@ -6,11 +6,11 @@ import pandas as pd
 from report_engine import build_report
 
 st.set_page_config(page_title='LOE — отчет по категориям', page_icon='📊', layout='wide')
-mode = st.sidebar.radio('Режим', ['По категориям — КЕТИК', 'Прежний режим — 5 файлов'])
+mode = st.sidebar.radio('Режим', ['По категориям — ОБЩ Очет', 'Прежний режим — 5 файлов'])
 if mode == 'Прежний режим — 5 файлов':
     runpy.run_path(str(Path(__file__).with_name('legacy_app.py')))
 else:
-    st.title('Отчет по категориям')
+    st.title('LOE')
     st.write('Категория определяется по артикулу на первом листе КЕТИК. Количество, доход и валовая прибыль берутся из ежедневных выгрузок.')
     left, right = st.columns(2)
     with left:
